@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Usuario:</b>
+  <%= @dispositivo.usuario_id %>
+</p>
+
+<p>
+  <b>Creado por:</b>
+  <%= @dispositivo.creado_por %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @dispositivo.status %>
+</p>
+
+<p>
+  <b>Device:</b>
+  <%= @dispositivo.device_id %>
+</p>
+
+<p>
+  <b>Sede:</b>
+  <%= @dispositivo.sede_id %>
+</p>
+
+<h2 class="center">Calificaciones </h2>
+
+<table  class="table .table-condensed ">
+  <% @califica.each do |calificacion| %>
+      <tr>
+        <td><%= calificacion.selected_option  %></td>
+        <td><span class="timestamp "> <%= calificacion.created_at %> </span></td>
+        <td><%= calificacion.mesint %></td>
+      </tr>
+  <% end %>
+
+
+
+</table>
+
+<% if current_usuario.admin? %>
+    <%= link_to 'Dispositivos', dispositivos_path %>|
+<% else %>
+    <%= link_to 'Perfil', current_user %>|
+<% end %>
+

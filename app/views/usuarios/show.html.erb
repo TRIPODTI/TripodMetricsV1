@@ -1,0 +1,146 @@
+<p id="notice" xmlns="http://www.w3.org/1999/html"><%= notice %></p>
+
+<div class="row">
+
+  <aside class="span7 pull-left">
+    <section>
+
+      <h2>
+        <%= @usuario.name %>
+      </h2>
+      <p>
+        <b>Empresa:</b>
+        <%= @usuario.empresa %>
+      </p>
+      <p>
+        <b>Email:</b>
+        <%= @usuario.email %>
+      </p>
+
+      <p>
+        <b>Fecha registro:</b>
+        <%= @usuario.created_at %>
+      </p>
+
+      <p>
+        <b>Fecha ingreso:</b>
+        <%= @usuario.fecha_ingreso %>
+      </p>
+      <% if !current_usuario.admin? && current_usuario?(@usuario)%>
+          <%= link_to 'Edita tu perfil', edit_usuario_path(@usuario) %>|
+          <%= link_to 'Agrega un dispositivo', new_dispositivo_path %>
+
+      <% end %>
+
+
+      <% if current_usuario.admin? %>
+         <%= link_to 'Usuarios', usuarios_path %>|
+          <%= link_to 'Dispositivos', dispositivos_path %>|
+
+            <%= link_to 'Agrega un dispositivo', new_dispositivo_path %>
+
+      <% else %>
+       <% end %>
+
+
+    </section>
+
+  </aside>
+
+  <div>
+    <section class="pull-right">
+     <h2 class=" center">Indicadores</h2>
+
+        <table  class=" rates  table .table-condensed ">
+
+            <% if $valormedia %>
+              <td>Excelente = <%= $valore %></td>
+              <td>Bueno = <%= $valorb %></td>
+              <td>Regular = <%= $valoreg %></td>
+              <td>Malo = <%= $valorm %></td>
+
+          <% end %>
+
+          <table  class=" rates  table .table-condensed ">
+            <td>Promedio Total =<%= "%5.2f"%$valormedia %><div id="chart_div"></div>
+            </td>
+          </table>
+
+
+
+
+        </table>
+    </section>
+  </div>
+
+  <div class="span7 pull-left">
+
+
+    <br />
+    <br />
+    <% if @usuario.dispositivos.any? %>
+
+        <p>Dispositivos [<%= @usuario.dispositivos.count %>]</p>
+
+        <ol class="pull-left dispositivos">
+          <%= render @dispositivos %><!--este se asocia con _dispotivo-html.erb como formato-->
+                    <!-- para que esto funcione debo crear un directorio dispositivos en view-->
+                    <!--esta variable se define en el show de usuarios-->
+          <%=  %>
+        </ol>
+    <% end %>
+
+  </div>
+
+</div>
+
+
+
+<head >
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+
+      function drawChart() {
+
+          // Create the data table.
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Calificación');
+          data.addColumn('number', 'Frecuencia');
+          data.addRows([
+              ['Excelente', <%= $valore %>],
+              ['Bueno',  <%= $valorb %>],
+              ['Regular',  <%= $valoreg %>],
+              ['Malo',  <%= $valorm %>]
+
+          ]);
+
+          // Set chart options
+          var options = {'title':'Ratings Generales',
+              'width':300,
+              'height':200,
+
+              'animation.duration':500,
+              'backgroundColor':'white',
+              'colors':['Blue','#000000']
+                };
+
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+          chart.draw(data, options);
+      }
+
+  </script>
+</head>
+

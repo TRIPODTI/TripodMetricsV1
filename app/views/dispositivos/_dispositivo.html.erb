@@ -1,0 +1,16 @@
+<li class="center">
+  <span class="content " ><%= link_to dispositivo.device_id, dispositivo%>
+
+    <%=
+        if dispositivo.status?
+          "Activo "
+        elsif
+        "Inactivo"
+        end
+
+    %> </span>
+  <span class="timestamp ">
+    Creado <%= time_ago_in_words(dispositivo.created_at) %>
+  </span>
+
+</li>

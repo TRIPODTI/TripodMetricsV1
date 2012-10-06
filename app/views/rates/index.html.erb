@@ -1,0 +1,28 @@
+<h1>Calificaciones </h1>
+
+<table class="center table table-striped ">
+  <tr>
+    <th>Dispositivo</th>
+    <th>Fecha</th>
+    <th>Opción seleccionada</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rates.each do |rate| %>
+  <tr>
+    <td><%= rate.device_id %></td>
+    <td><%= rate.created_at %></td>
+    <td><%= rate.in_date %></td>
+    <td><%= rate.selected_option %></td>
+    <td><%= link_to 'Mostrar', rate %></td>
+    <td><%= link_to 'Eliminiar', rate, method: :delete, data: { confirm: 'Está seguro de eliminar?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<!--        para que no se puedan agregarcalificacioens au´n siendo administrador
+
+-->

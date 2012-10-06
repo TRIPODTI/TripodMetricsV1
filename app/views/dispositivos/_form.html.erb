@@ -1,0 +1,50 @@
+
+<%= form_for(@dispositivo) do |f| %>
+  <% if @dispositivo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dispositivo.errors.count, "error") %> prohibited this dispositivo from being saved:</h2>
+
+      <ul>
+      <% @dispositivo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+   <div class="checkbox">
+
+     Status <%= f.check_box :status %>
+     <br />
+     <br />
+   </div>
+  <!--
+  <div class="input-small">
+
+    ID Usuario<%= f.number_field :usuario_id %>
+    <br />
+    <br />
+  </div>
+  -->
+  <div class="input-medium">
+     Creado por <%= f.text_field :creado_por %>
+    <br />
+    <br />
+  </div>
+  <div class="input-medium">
+   <!-- <%= f.label "Código Dispositivo" %>   -->
+   Código Dispositivo <%= f.text_field :device_id %>
+    <br />
+    <br />
+  </div>
+  <div class="input-small">
+  Sede<%= f.number_field :sede_id %>
+  </div>
+   <br />
+   <br />
+
+    <%= f.submit "Crear", class:" btn-medium btn-primary" %>
+
+
+<% end %>

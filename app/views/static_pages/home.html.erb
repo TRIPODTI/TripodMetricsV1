@@ -1,0 +1,28 @@
+<% provide(:title, 'Home')%>
+<div class="center hero-unit pull-left">
+  <!--<h1>Tripod Metrics</h1>   -->
+  <h2>
+
+    <b></b>
+    <b>¿Es tu primera vez?</b>
+    <b></b>
+  </h2>
+  <%=   link_to "¡Regístrate!", new_path , class: "btn btn-large btn-primary" %>
+</div>
+
+<div class= "row">
+  <div class="span5 offset2">
+    <div class="hero-unit pull-right">
+      <%= form_for(:login, url: logins_path) do |f| %>
+
+          <%=  f.label :email %>
+          <%=  f.text_field :email %>
+          <%= f.label :password %>
+          <%=  f.password_field :password %>
+
+          <%= f.submit "Ingresar",class: "btn btn-medium btn-success" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

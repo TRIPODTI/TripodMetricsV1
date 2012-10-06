@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  usuario_id: 1
+  creado_por: MyString
+  status: false
+  device_id: MyString
+  sede_id: 1
+
+two:
+  usuario_id: 1
+  creado_por: MyString
+  status: false
+  device_id: MyString
+  sede_id: 1

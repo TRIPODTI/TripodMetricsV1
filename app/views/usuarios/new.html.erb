@@ -1,0 +1,25 @@
+<% provide(:title, 'Registro')%>
+<div class="row ">
+  <div class="span6 offset3">
+    <%= form_for (@usuario) do |f| %>
+        <% render 'shared/error_messages' %>
+        <%=  f.label :name, "Nombre" %>
+        <%=  f.text_field :name %>
+        <%=  f.label :email %>
+        <%=  f.text_field :email %>
+        <%= f.label :password %>
+        <%=  f.password_field :password %>
+        <%= f.label :password_confirmation, "Confirmar Password" %>
+        <%= f.password_field :password_confirmation %>
+
+
+
+        <%= f.submit "Regístrate",class: "btn btn-medium btn-success" %>
+    <% end %>
+
+
+
+  </div>
+
+
+</div>

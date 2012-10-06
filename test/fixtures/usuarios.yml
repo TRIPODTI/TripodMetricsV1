@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  fecha_registro: 2012-09-10 11:04:58
+  fecha_ingreso: 2012-09-10 11:04:58
+  empresa: MyString
+
+two:
+  name: MyString
+  email: MyString
+  fecha_registro: 2012-09-10 11:04:58
+  fecha_ingreso: 2012-09-10 11:04:58
+  empresa: MyString

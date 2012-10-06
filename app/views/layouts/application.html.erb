@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title yield(:title) %></title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+  <!--mirar en layouts el archivo que corresponde con cada layout asociado a render
+  se debe crear un archivo _nombredel layout.html.erb-->
+</head>
+<body>
+<%= render 'layouts/header' %>
+<div class="container pull-center">
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"></div>
+  <% end %>
+
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+  <%= debug(params) if Rails.env.development? %>
+  <!-- Estoi me genbera
+una ventana donde puedo ir viendo los
+resultados del debuger en la aplicacion
+luego de este debug creamos un debug box en custom css scss-->
+</div>
+</body>
+</html>
+

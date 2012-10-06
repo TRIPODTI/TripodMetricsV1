@@ -1,0 +1,137 @@
+<p id="notice" xmlns="http://www.w3.org/1999/html"><%= notice %></p>
+
+<div class="row">
+  <aside class="span7 pull-left">
+    <section>
+
+    </section>
+
+  </aside>
+
+  <div>
+    <section class="pull-right">
+      <h2 class=" center">Indicadores</h2>
+
+      <table  class=" rates  table .table-condensed ">
+
+        <% if @valormedia %>
+            <td>Excelente = <%= @valore %></td>
+            <td>Bueno = <%= @valorb %></td>
+            <td>Regular = <%= @valoreg %></td>
+            <td>Malo = <%= @valorm %></td>
+
+        <% end %>
+        <table  class=" rates  table .table-condensed ">
+          <td>Promedio Total =  <%=  "%5.2f" % @valormedia %> </td>
+          <div id="chart_div"></div>
+          <div id="visualization"></div>
+        </table>
+
+
+
+
+        <!--    con esto se hace selección de fechas y este selleva al control
+           if params[:start_date] && params[:end_date]
+           start_date = params[:start_date]
+           end_date = params[:end_date]
+            <%= select_date Date.yesterday, :prefix => :start_date %>
+            <%= select_date Date.today, :prefix => :end_date %>>
+            <%= submit_tag "Submit", :disable_with => "Submitting..." %>
+            -->
+
+
+        </table>
+
+       </section>
+
+    </div>
+</div>
+
+<head >
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+
+      function drawChart() {
+
+          // Create the data table.
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Calificación');
+          data.addColumn('number', 'Frecuencia');
+          data.addRows([
+              ['Excelente', <%= @valore %>],
+              ['Bueno',  <%= @valorb %>],
+              ['Regular',  <%= @valoreg %>],
+              ['Malo',  <%= @valorm %>]
+
+          ]);
+
+          // Set chart options
+          var options = {'title':'Ratings Generales',
+              'width':300,
+              'height':200,
+
+              'animation.duration':500,
+              'backgroundColor':'white',
+              'colors':['Blue','#000000']
+          };
+
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+          chart.draw(data, options);
+      }
+
+  </script>
+</head>
+
+
+
+
+<head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+
+
+      function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+              ['Year', 'Promedio'],
+              [ 'enero', <%= "%5.2f" %@dispmedia[@indicegrafica][0]  %>],
+              [ 'feb.',  <%= "%5.2f" %@dispmedia[@indicegrafica][1]%>],
+              [ 'mar.',  <%= "%5.2f" %@dispmedia[@indicegrafica][2]%>],
+              [ 'abr.',  <%= "%5.2f" %@dispmedia[@indicegrafica][3]%>],
+              [ 'may.',  <%= "%5.2f" %@dispmedia[@indicegrafica][4]%>],
+              [ 'jun.',  <%= "%5.2f" %@dispmedia[@indicegrafica][5]%>],
+              [ 'jul.',  <%= "%5.2f" %@dispmedia[@indicegrafica][6]%>],
+              [ 'ago.',  <%= "%5.2f" %@dispmedia[@indicegrafica][7]%>],
+              [ 'sept.',  <%= "%5.2f" %@dispmedia[@indicegrafica][8]%>],
+              [ 'oct..',  <%= "%5.2f" %@dispmedia[@indicegrafica][9]%>],
+              [ 'nov.',  <%= "%5.2f" %@dispmedia[@indicegrafica][10]%>],
+              [ 'dic.',  <%= "%5.2f" %@dispmedia[@indicegrafica][11]%>]
+
+          ]);
+
+          var options = {
+              title: 'Dispositivo 1 Performance'
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('visualization'));
+          chart.draw(data, options);
+
+
+      }
+  </script>
+</head>
+

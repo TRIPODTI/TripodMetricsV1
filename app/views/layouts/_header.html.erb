@@ -1,0 +1,41 @@
+<header class="navbar center">
+
+  <div class="container">
+
+    <%= link_to image_tag("Logo2.png", alt: "Rails"), root_path %>
+    <!--aquí un logo-->
+    <nav>
+      <ul class="nav nav-pills pull-right ">
+        <li class="active"><%= link_to "Home", root_path %></li>
+
+        <% if signed_in? %>
+            <li class="active"> <%=  link_to "Perfil", current_user %></li>
+            <li class="active"> <%=  link_to "Reportes", reports_path(@usuario) %></li>
+            <li class="dropdown active">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                  <!--para usar dropdown, modificar assets javascripts application.js
+                                                                      -->
+                  Opciones
+                </a>
+            <ul class="dropdown-menu">
+              <li> <%= link_to "Perfil", current_user %></li>
+              <li> <%= link_to "Reportes", reports_path(@usuario) %></li>
+            <li class="divider"></li>
+            <li> <%= link_to "Cerrar sesión", signout_path, method:"delete" %></li>
+            </ul>
+            </li>
+            <li class="active"> <%=  link_to "Cerrar Sesión", signout_path, method:"delete" %></li>
+
+        <% else %>
+            <li class="active "><%= link_to "Login", signin_path %></li>
+
+
+      <% end %>
+
+
+      </ul>
+    </nav>
+  </div>
+
+</header>
