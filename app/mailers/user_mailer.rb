@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def welcome_email(user)
     @user = user
     @url  = "http://example.com/login"
-     @device= device
+
     mail(:to => 'jorgecardenas@tripod.net.co',:from => 'relacionescomerciales@tripod.net.co', :subject=> "Notificación Calificación Servicio" )
   end
 end
