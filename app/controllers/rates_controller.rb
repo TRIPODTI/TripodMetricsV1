@@ -57,6 +57,9 @@ class RatesController < ApplicationController
     end
     if params[:rate][:selected_option] == "M"
       params[:rate][:valor] = 2
+      @userid=Dispositivo.find_by_device_id(params[:rate][:device_id]).usuario_id
+      @user=Usuario.find_all_by_id(@userid,params[:rate][:device_id] )
+      UserMailer.welcome_email(@user).deliver
     end
     time = Time.now
     params[:rate][:mesint] = time.strftime("%m")
@@ -69,25 +72,6 @@ class RatesController < ApplicationController
     #params[:rate][:hora] = 12
 
     @rate = Rate.new(params[:rate])
-
-
-
-    @userid=Dispositivo.find_by_device_id(params[:rate][:device_id]).usuario_id
-    @user=Usuario.find_all_by_id(@userid)
-    #
-    #
-    #  email = "relacionescomerciales@tripod.net.co"
-    #  recipient = "jorgecardenas@tripod.net.co"
-    #  subject = "hola"
-    #  message = "ha recibido una calificación negativa"
-    #  Notificaction.notification_email(recipient, subject, message)
-    #  return if request.xhr?
-    #  render :text => 'Message sent successfully'
-
-
-    # Notification.notification_email.deliver
-    #@rate = dispositivo.build(params[:rate])
-    UserMailer.welcome_email(@user).deliver
 
     respond_to do |format|
 
