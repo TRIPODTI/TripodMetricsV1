@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile.lock" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile.lock" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile.lock">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="18" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.0">
+            <state line="126" column="18" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.64615387">
               <folding />
             </state>
           </provider>
@@ -53,16 +53,16 @@
       <file leaf-file-name="rates_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/rates_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="62" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0">
+            <state line="65" column="58" selection-start="1524" selection-end="1524" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome_email.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="welcome_email.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/user_mailer/welcome_email.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="43" selection-start="463" selection-end="463" vertical-scroll-proportion="0.5424354">
+            <state line="14" column="43" selection-start="463" selection-end="463" vertical-scroll-proportion="-9.8">
               <folding />
             </state>
           </provider>
@@ -104,8 +104,8 @@
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/views/user_mailer/welcome_email.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile.lock" />
-        <option value="$PROJECT_DIR$/app/controllers/rates_controller.rb" />
         <option value="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/rates_controller.rb" />
       </list>
     </option>
   </component>
@@ -945,6 +945,13 @@
         <state line="37" column="0" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.512761" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="14" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/environment.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
@@ -952,9 +959,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/welcome_email.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="18" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.0">
+        <state line="14" column="43" selection-start="463" selection-end="463" vertical-scroll-proportion="-9.8">
           <folding />
         </state>
       </provider>
@@ -968,21 +975,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/rates_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="62" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0">
+        <state line="65" column="58" selection-start="1524" selection-end="1524" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="14" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/welcome_email.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="43" selection-start="463" selection-end="463" vertical-scroll-proportion="0.5424354">
+        <state line="126" column="18" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.64615387">
           <folding />
         </state>
       </provider>
