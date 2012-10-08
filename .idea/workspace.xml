@@ -26,7 +26,7 @@
       <file leaf-file-name="user_mailer.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="18" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0">
+            <state line="7" column="141" selection-start="294" selection-end="343" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="rates_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/rates_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="71" selection-start="1451" selection-end="1451" vertical-scroll-proportion="0.80510443">
+            <state line="63" column="50" selection-start="1452" selection-end="1452" vertical-scroll-proportion="0.80510443">
               <folding />
             </state>
           </provider>
@@ -949,13 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="18" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user_mailer/welcome_email.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="30" selection-start="269" selection-end="269" vertical-scroll-proportion="-7.0">
@@ -963,9 +956,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="141" selection-start="294" selection-end="343" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/rates_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="71" selection-start="1451" selection-end="1451" vertical-scroll-proportion="0.80510443">
+        <state line="63" column="50" selection-start="1452" selection-end="1452" vertical-scroll-proportion="0.80510443">
           <folding />
         </state>
       </provider>

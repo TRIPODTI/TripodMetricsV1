@@ -59,7 +59,7 @@ class RatesController < ApplicationController
       params[:rate][:valor] = 2
       @userid=Dispositivo.find_by_device_id(params[:rate][:device_id]).usuario_id
       @user=Usuario.find_all_by_id(@userid )
-      UserMailer.notificacion(@user,params[:rate][:device_id]).deliver
+      UserMailer.welcome_email(@user,params[:rate][:device_id]).deliver
     end
     time = Time.now
     params[:rate][:mesint] = time.strftime("%m")
