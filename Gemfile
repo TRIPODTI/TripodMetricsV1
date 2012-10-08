@@ -8,7 +8,7 @@ gem 'faker'
 gem 'jquery-rails'
 gem "sqlite3"
 gem "spreadsheet"
-gem "to_xls"
+#gem "to_xls"
 
 # Bundle edge Rails instead:
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
