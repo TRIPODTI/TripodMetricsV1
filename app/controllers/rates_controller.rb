@@ -58,8 +58,8 @@ class RatesController < ApplicationController
     if params[:rate][:selected_option] == "M"
       params[:rate][:valor] = 2
       @userid=Dispositivo.find_by_device_id(params[:rate][:device_id]).usuario_id
-      @user=Usuario.find_all_by_id(@userid,params[:rate][:device_id] )
-      UserMailer.welcome_email(@user).deliver
+      @user=Usuario.find_all_by_id(@userid )
+      UserMailer.notificacion(@user,params[:rate][:device_id]).deliver
     end
     time = Time.now
     params[:rate][:mesint] = time.strftime("%m")
