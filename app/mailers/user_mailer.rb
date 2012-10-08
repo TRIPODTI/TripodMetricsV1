@@ -5,6 +5,6 @@ class UserMailer < ActionMailer::Base
     @user = user
     @url  = "http://example.com/login"
 
-    mail(:to => 'jorgecardenas@tripod.net.co',:from => 'jorgehernancardenas@gmail.com')
+    mail(:to => 'jorgecardenas@tripod.net.co',:from => 'relacionescomerciales@tripod.net.co')
   end
 end
