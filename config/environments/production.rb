@@ -5,7 +5,17 @@ TripodMetricsV1::Application.configure do
   config.cache_classes = true
 
 
-
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: "smtpout.secureserver.net",
+      port: 25,
+      domain: "tripod.net.co",
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: "relacionescomerciales@tripod.net.co",
+      password:"relacionescomerciales"
+  }
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
