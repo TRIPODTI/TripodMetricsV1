@@ -5,6 +5,6 @@ class UserMailer < ActionMailer::Base
     @user = user
     @url  = "http://example.com/login"
     @device = #device
-    mail(:to => 'jorgecardenas@tripod.net.co',:from => 'relacionescomerciales@tripod.net.co', :subject=>"Notificación Tripod Metrics" )
+    mail(:to => 'jorgecardenas@tripod.net.co',:from => 'relacionescomerciales@tripod.net.co', :subject => "Notificacion Tripod Metrics" )
   end
 end
