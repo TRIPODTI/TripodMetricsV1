@@ -1,29 +1,27 @@
 TripodMetricsV1::Application.routes.draw do
+
+
+
+
   resources :dispositivos, only: [:show,:index, :new, :create, :destroy]  do
     resources :rates
   end
 
   resources :usuarios
+  resources :calificador
   resources :static_pages
   resources :logins, only: [:new, :create, :destroy]
 
-  #get "db_admin/mesactual"
-  #
-  #get "db_admin/ultimomes"
-  #
-  #get "db_admin/anoactual"
-  #
-  #get "db_admin/daterange"
-  #
-  #get "db_admin/generalstat"
-  #
-  #get "db_admin/dispositivostat"
-  #
-  #get "db_admin/sedestat"
+  match '/contact2', to: 'calificador#personal'
+  #match '/create', to: 'calificador#calificar', via: :get
+  match '/payments/payment', :to => 'payments#payment', :as => 'paymentspayment', :via => [:get]
+  match '/payments/relay_response', :to => 'payments#relay_response', :as => 'payments_relay_response', :via => [:post]
+  match '/payments/receipt', :to => 'payments#receipt', :as => 'payments_receipt', :via => [:get]
 
 
   root :to => 'static_pages#home'
 
+  match '/rateservice/:device/:id', to: 'calificador#calificador'
   match '/newrate', to: 'rates#new'
   match '/rate', to: 'rates#index'
   match '/rate/add_entry', to: 'rates#add_entry'

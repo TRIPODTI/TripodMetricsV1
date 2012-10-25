@@ -1,7 +1,13 @@
 <li class="center">
   <span class="content " ><%= link_to dispositivo.device_id, dispositivo%>
 
-    <%=
+    <% if dispositivo.device_type=="Web"%>
+          <i class="icon-globe"></i>
+    <% end %>
+    <% if dispositivo.device_type=="Consola"%>
+          <i class="icon-tasks"></i>
+    <% end %>
+         <%=
         if dispositivo.status?
           "Activo "
         elsif

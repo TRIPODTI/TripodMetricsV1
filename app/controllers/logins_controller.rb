@@ -8,8 +8,10 @@ class LoginsController < ApplicationController
 
     usuario = Usuario.find_by_email(params[:login][:email].downcase)
     if usuario && usuario.authenticate( params[:login][:password])
-        sign_in usuario
-        redirect_back_or usuario
+
+      sign_in usuario
+      redirect_back_or usuario
+
       #flash[:success]="Bienvenido a Tripod Metrics"
     else
 

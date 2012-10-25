@@ -1,5 +1,5 @@
 class Dispositivo < ActiveRecord::Base
-  attr_accessible :creado_por, :device_id, :sede_id, :status, :usuario_id
+  attr_accessible :creado_por, :device_id, :sede_id, :status, :usuario_id, :device_type
   #quitamos usuario id de los atributos accesibles para evitar edición
   belongs_to :usuario     #así creo la asociación entre tablas
                           #quiere decir que micropost tiene un usuario asociado

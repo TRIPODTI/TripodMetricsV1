@@ -4,12 +4,15 @@
 
   <aside class="span7 pull-left">
     <section>
-
+      <h2>
+      <%= image_tag(@usuario.url, alt: @usuario.name)   %>
+      </h2>
       <h2>
         <%= @usuario.name %>
       </h2>
       <p>
         <b>Empresa:</b>
+
         <%= @usuario.empresa %>
       </p>
       <p>
@@ -25,6 +28,10 @@
       <p>
         <b>Fecha ingreso:</b>
         <%= @usuario.fecha_ingreso %>
+      </p>
+      <p>
+
+        <%= @usuario.counter %>
       </p>
       <% if !current_usuario.admin? && current_usuario?(@usuario)%>
           <%= link_to 'Edita tu perfil', edit_usuario_path(@usuario) %>|

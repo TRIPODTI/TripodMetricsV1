@@ -39,6 +39,13 @@ class DispositivosController < ApplicationController
   def new
     @dispositivo = Dispositivo.new
 
+    chars = 'ABCDEFGHJKLMNOPQRSTUVWXYZ'
+    number='0123456789'
+    @codigodevice = ''
+    3.times { |i| @codigodevice << chars[rand(7)] }
+    3.times { |i| @codigodevice << number[rand(7)] }
+    @codigodevice
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @dispositivo }

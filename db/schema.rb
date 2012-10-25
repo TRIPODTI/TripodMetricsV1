@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120924141035) do
+ActiveRecord::Schema.define(:version => 20121025162544) do
 
   create_table "dispositivos", :force => true do |t|
     t.integer  "usuario_id"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(:version => 20120924141035) do
     t.boolean  "status"
     t.string   "device_id"
     t.integer  "sede_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "device_type"
   end
 
   add_index "dispositivos", ["sede_id"], :name => "index_dispositivos_on_sede_id"
@@ -58,6 +59,9 @@ ActiveRecord::Schema.define(:version => 20120924141035) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
+    t.integer  "counter"
+    t.string   "service_type"
+    t.string   "url"
   end
 
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true

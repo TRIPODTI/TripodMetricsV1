@@ -21,6 +21,17 @@
 </p>
 
 <p>
+  <b>Tipo:</b>
+  <%= @dispositivo.device_type %>
+  <% if @dispositivo.device_type=="Web"%>
+      <i class="icon-globe"></i>
+  <% end %>
+  <% if @dispositivo.device_type=="Consola"%>
+      <i class="icon-tasks"></i>
+  <% end %>
+</p>
+
+<p>
   <b>Sede:</b>
   <%= @dispositivo.sede_id %>
 </p>

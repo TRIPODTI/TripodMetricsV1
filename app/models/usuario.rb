@@ -1,6 +1,6 @@
 class Usuario < ActiveRecord::Base
 
-  attr_accessible :updated_at,:email, :empresa, :fecha_ingreso, :fecha_registro, :name, :password, :password_confirmation
+  attr_accessible :updated_at,:email, :empresa, :fecha_ingreso, :fecha_registro, :name, :password, :password_confirmation, :counter, :service_type, :url
   has_secure_password
   has_many :dispositivos, dependent: :destroy   #esto elimina dispotivos al momento de eliminar
                                                 #usuarios

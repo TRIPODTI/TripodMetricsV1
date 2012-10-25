@@ -14,7 +14,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios.json
   def index
     @usuarios = Usuario.all
-
+    $logo="Logo2.png"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @usuarios }
@@ -26,7 +26,7 @@ class UsuariosController < ApplicationController
   def show
     @usuario = Usuario.find(params[:id])
     @dispositivos = @usuario.dispositivos
-
+    $logo="Logo2.png"
     @disp = Array.new
     valores  #así se invoca
     respond_to do |format|
@@ -39,17 +39,20 @@ class UsuariosController < ApplicationController
   # GET /usuarios/new.json
   def new
     @usuario = Usuario.new
+    $logo="Logo2.png"
   end
 
   # GET /usuarios/1/edit
   def edit
     @usuario = Usuario.find(params[:id])
+    $logo="Logo2.png"
   end
 
   # POST /usuarios
   # POST /usuarios.json
   def create
     @usuario = Usuario.new(params[:usuario])
+    $logo="Logo2.png"
      respond_to do |format|
       if @usuario.save
         sign_in @usuario
@@ -67,6 +70,7 @@ class UsuariosController < ApplicationController
   # PUT /usuarios/1.json
   def update
     @usuario = Usuario.find(params[:id])
+    $logo="Logo2.png"
 
     respond_to do |format|
       if @usuario.update_attributes(params[:usuario])
@@ -84,6 +88,7 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1.json
   def destroy
     @usuario = Usuario.find(params[:id])
+    $logo="Logo2.png"
     @usuario.destroy
     flash[:success] = "usuario eliminado"
     respond_to do |format|
@@ -102,6 +107,7 @@ class UsuariosController < ApplicationController
   end
 
   def reports
+    $logo="Logo2.png"
     @fechadiaselected = String.new
     @fechaanoselected = String.new
     $selectdevice = String.new
