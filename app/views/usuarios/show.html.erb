@@ -5,7 +5,9 @@
   <aside class="span7 pull-left">
     <section>
       <h2>
-      <%= image_tag(@usuario.url, alt: @usuario.name)   %>
+        <% if @usuario.url? %>
+              <%= image_tag(@usuario.url, alt: @usuario.name)   %>
+        <% end %>
       </h2>
       <h2>
         <%= @usuario.name %>
