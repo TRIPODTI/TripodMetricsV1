@@ -12,7 +12,7 @@ class CalificadorController < ApplicationController
     end
 
     if params[:excelente]
-      url = URI.parse('http://ec2-184-72-222-38.compute-1.amazonaws.comcreate?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=E')
+      url = URI.parse('http://ec2-184-72-222-38.compute-1.amazonaws.com/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=E')
       result = Net::HTTP.get(url)
       redirect_to contact2_path
     end
