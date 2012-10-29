@@ -4,4 +4,9 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# yor.create(name: 'Emanuel', city: cities.first)
+admin = Usuario.create(name: "Admin",
+                       email: "admin@tripod.net.co",
+                       password: "tripodadmin",
+                       password_confirmation: "tripodadmin")
+admin.toggle!(:admin)
