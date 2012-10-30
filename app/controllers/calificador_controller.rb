@@ -12,23 +12,23 @@ class CalificadorController < ApplicationController
     end
 
     if params[:excelente]
-      url = URI.parse('http://ec2-184-72-222-38.compute-1.amazonaws.com/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=E')
+      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=E')
       result = Net::HTTP.get(url)
       redirect_to contact2_path
     end
 
     if params[:bueno]
-      url = URI.parse('http://ec2-184-72-222-38.compute-1.amazonaws.com/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=B')
+      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=B')
       result = Net::HTTP.get(url)
       redirect_to contact2_path
     end
     if params[:regular]
-      url = URI.parse('http://ec2-184-72-222-38.compute-1.amazonaws.com/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=R')
+      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=R')
       result = Net::HTTP.get(url)
       redirect_to contact2_path
     end
     if params[:malo]
-      url = URI.parse('http://ec2-184-72-222-38.compute-1.amazonaws.com/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=M')
+      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=M')
       result = Net::HTTP.get(url)
       redirect_to contact2_path
     end
