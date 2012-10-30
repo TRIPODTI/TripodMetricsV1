@@ -10,6 +10,8 @@ gem "sqlite3"
 gem "spreadsheet"
 #gem "to_xls"
 gem "authorize-net"
+gem 'newrelic_rpm'
+gem 'ey_config'
 
 # Bundle edge Rails instead:
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
