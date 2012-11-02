@@ -5,7 +5,7 @@ TripodMetricsV1::Application.configure do
   # every request. This slows down rate time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-
+  $host="http://localhost:3000"
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
 

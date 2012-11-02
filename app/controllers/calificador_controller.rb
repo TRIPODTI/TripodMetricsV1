@@ -4,7 +4,12 @@ class CalificadorController < ApplicationController
 
   def calificador
     $usuario = Usuario.find(params[:id])
+
     @device= params[:device]
+    @datetime = Time.now
+    @date=@datetime.strftime("%d/%m/%Y")
+    @time=@datetime.strftime("%H:%M:%S")
+
     if $usuario.service_type=="Personalizado"
       $logo=$usuario.url
     else
@@ -12,23 +17,23 @@ class CalificadorController < ApplicationController
     end
 
     if params[:excelente]
-      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=E')
+      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device.to_s+'&rate[in_date]='+@date.to_s+'%20'+@time.to_s+'&rate[selected_option]=E')
       result = Net::HTTP.get(url)
       redirect_to contact2_path
     end
 
     if params[:bueno]
-      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=B')
+      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device.to_s+'&rate[in_date]='+@date.to_s+'%20'+@time.to_s+'&rate[selected_option]=E')
       result = Net::HTTP.get(url)
       redirect_to contact2_path
     end
     if params[:regular]
-      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=R')
+      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device.to_s+'&rate[in_date]='+@date.to_s+'%20'+@time.to_s+'&rate[selected_option]=E')
       result = Net::HTTP.get(url)
       redirect_to contact2_path
     end
     if params[:malo]
-      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device+'&rate[in_date]=02/10/2012%2011:19:20&rate[selected_option]=M')
+      url = URI.parse('http://tripod.net.co/create?rate[device_id]='+@device.to_s+'&rate[in_date]='+@date.to_s+'%20'+@time.to_s+'&rate[selected_option]=E')
       result = Net::HTTP.get(url)
       redirect_to contact2_path
     end

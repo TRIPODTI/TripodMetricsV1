@@ -151,7 +151,6 @@ GEM
 PLATFORMS
   ruby
 
-
 DEPENDENCIES
   annotate
   authorize-net
