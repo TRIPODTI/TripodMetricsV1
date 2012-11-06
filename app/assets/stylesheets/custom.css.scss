@@ -26,10 +26,17 @@ $grayMediumLight: #eaeaea;
 /* universal */
 html {
   overflow-y: scroll;
+
+}
+div{
+  //background-image:url('fondo.png');
+  //background-repeat: no-repeat;
+  //background-size: contain;
 }
 
 body {
   padding-top: 20px;
+
 }
 
 section {
@@ -39,7 +46,9 @@ section {
 
 textarea {
   resize: vertical;
+
 }
+
 
 .center {
   text-align: center;
@@ -82,6 +91,7 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
+
 }
 
 #logo:hover {
@@ -123,10 +133,13 @@ footer ul li {
 
 /*sidebar*/
 aside {
+
   section {
+
     padding:10px 0;
     border-top: 1px solid $grayLighter;
     &:first-child {
+
       border: 0;
       padding-top: 0;
 
@@ -157,6 +170,7 @@ input, textarea, select, .uneditable-input {
   height: auto !important;
   margin-bottom: 15px;
 
+
   @include box_sizing;
 }
 
@@ -185,6 +199,7 @@ input, textarea, select, .uneditable-input {
 
 .content {
   display: block;
+
 }
 
 .timestamp {
@@ -193,6 +208,7 @@ input, textarea, select, .uneditable-input {
 aside {
   textarea: 100px;
   margin-bottom: 5px;
+
 }
 
 .rollover{

@@ -62,12 +62,14 @@ class RatesController < ApplicationController
       @device= params[:rate][:device_id]
       UserMailer.welcome_email(@user).deliver
     end
-    time = Time.now
+    #time=Time.new
+    time = Time.parse(params[:rate][:in_date])
     params[:rate][:mesint] = time.strftime("%m")
     params[:rate][:ano] = time.strftime("%Y")
     params[:rate][:dia] = time.strftime("%d")
     params[:rate][:hora] = time.strftime("%H")
-    #params[:rate][:mesint] = 9
+
+    params[:rate][:in_date] = params[:rate][:in_date]
     #params[:rate][:ano] = 2012
     #params[:rate][:dia] = "15"
     #params[:rate][:hora] = 12

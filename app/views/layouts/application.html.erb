@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title><%= full_title yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
@@ -9,9 +10,9 @@
   <!--mirar en layouts el archivo que corresponde con cada layout asociado a render
   se debe crear un archivo _nombredel layout.html.erb-->
 </head>
-<body>
+<body  >
 <%= render 'layouts/header' %>
-<div class="container pull-center">
+<div class="container pull-center"  >
   <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"></div>
   <% end %>

@@ -1,18 +1,25 @@
 <% provide(:title, 'Home')%>
-<div class="center hero-unit pull-left">
-  <!--<h1>Tripod Metrics</h1>   -->
-  <h2>
 
-    <b></b>
-    <b>¿Es tu primera vez?</b>
-    <b></b>
-  </h2>
-  <%=   link_to "¡Regístrate!", new_path , class: "btn btn-large btn-primary" %>
-</div>
 
-<div class= "row">
-  <div class="span5 offset2">
-    <div class="hero-unit pull-right">
+<section>
+  <section class="pull-right">
+    <%= link_to(image_tag('Publ1.png',  size: '400x100'), 'http://www.linkedin.com/groups/For-Better-Service-Community-4609806?gid=4609806&trk=hb_side_g' )%>
+
+  </section>
+<div class= "bordered" >
+  <div class="span5 " >
+  <div class="hero-unit  center"  >
+    <!--<h1>Tripod Metrics</h1>   -->
+    <h2>
+
+      <b></b>
+      <b>¿Es tu primera vez?</b>
+      <b></b>
+    </h2>
+    <%=   link_to "¡Regístrate!", new_path , class: "btn btn-large btn-primary" %>
+  </div>
+
+    <div class="hero-unit center" >
       <%= form_for(:login, url: logins_path) do |f| %>
 
           <%=  f.label :email %>
@@ -25,4 +32,9 @@
 
     </div>
   </div>
-</div>
+
+    </div>
+ </section>
+
+
+
